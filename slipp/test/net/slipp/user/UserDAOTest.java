@@ -16,7 +16,6 @@ public class UserDAOTest {
 	public void setup() {
 
 		userDao = new UserDAO();
-
 		
 	}
 	
@@ -43,14 +42,28 @@ public class UserDAOTest {
 	
 	@Test
 	public void crud() throws Exception{
+		
+		
 		User user = UserTest.TEST_USER;
 		//userDao.addUser(UserTest.TEST_USER);
 		userDao.removeUser(user.getUserId());
 		userDao.addUser(user);
 		
+		
+		
 		User dbUser = userDao.findByUserId(user.getUserId());
 		assertEquals(user, dbUser);
 		//userDao.addUser(UserTest.TEST_USER);
+		
+		
+		
+		User updateUser = new User(user.getUserId(), "uPassword", "updateUser", "test@naver.com");
+		userDao.updateUser(updateUser);
+		
+		dbUser = userDao.findByUserId(updateUser.getUserId());
+		assertEquals(updateUser, dbUser);
+		
+		
 		
 	}
 	

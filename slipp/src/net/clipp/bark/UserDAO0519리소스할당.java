@@ -1,4 +1,4 @@
-package net.slipp.user;
+package net.clipp.bark;
 
 
 import java.sql.Connection;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 import net.slipp.user.User;
 
-public class UserDAO {
+public class UserDAO0519리소스할당 {
 
 	public Connection getConnection() throws SQLException {
 
