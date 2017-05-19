@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import net.slipp.db.Database;
 
 
-@WebServlet("/users/save")
-public class SaveUserServlet extends HttpServlet {
+@WebServlet("/users/create")
+public class CreateUserServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -25,7 +25,6 @@ public class SaveUserServlet extends HttpServlet {
 		String email = req.getParameter("email");
 
 		User user = new User(userId, password, name, email);
-		
 		
 		
 		UserDAO userDAO = new UserDAO();

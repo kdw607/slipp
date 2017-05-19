@@ -1,18 +1,9 @@
-package net.slipp.user;
+package net.slipp.bark;
 
-import java.io.IOException;
-import java.sql.SQLException;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @WebServlet("/users/updateForm")
-public class UpdateFormUserServlet extends HttpServlet {
+public class UpdateFormUserServlet0519forward extends HttpServlet {
 
 	
 	@Override
@@ -33,7 +24,7 @@ public class UpdateFormUserServlet extends HttpServlet {
 		try{
 			User user = userDao.findByUserId(userId);
 			req.setAttribute("user", user);
-			RequestDispatcher rd = req.getRequestDispatcher("/form.jsp");
+			RequestDispatcher rd = req.getRequestDispatcher("/update_form.jsp");
 			rd.forward(req, resp);
 		}catch(SQLException e){
 			
